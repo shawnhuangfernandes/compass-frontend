@@ -5,6 +5,7 @@ class PromptSelectContainer extends Component {
         return (
             <div>
                 Prompt Select
+                You are logged in as user #{this.props.user_id}
             </div>
         );
     }

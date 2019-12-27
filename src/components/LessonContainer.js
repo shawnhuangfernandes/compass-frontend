@@ -5,6 +5,7 @@ class LessonContainer extends Component {
         return (
             <div>
                 Lesson
+                You are logged in as user #{this.props.user_id}
             </div>
         );
     }
