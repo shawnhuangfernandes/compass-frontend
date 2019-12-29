@@ -6,20 +6,19 @@ import CurriculumContainer from "../components/CurriculumContainer";
 import LessonContainer from "../components/LessonContainer";
 import PromptSelectContainer from "../components/PromptSelectContainer";
 import PromptContainer from "../components/PromptContainer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_id: ""
+      user: {}
     };
   }
 
-  onLogin = async id => {
+  onLogin = async user => {
     await this.setState({
-      user_id: id
+      current_user: user
     });
   };
 
@@ -27,33 +26,38 @@ class MainContainer extends Component {
     return (
       <Router>
         <div>
-            <Route path="/" exact render={() => <LandingContainer />} />
-            <Route
-              path="/login"
-              render={() => <LoginContainer handleLogin={this.onLogin} />}
-            />
-            <Route path="/sign-up" render={() => <SignUpContainer />} />
-            <Route
-              path="/curriculum"
-              render={() => (
-                <CurriculumContainer user_id={this.state.user_id} />
-              )}
-            />
-            <Route
-              path="/lesson"
-              render={() => <LessonContainer user_id={this.state.user_id} />}
-            />
-            <Route
-              path="/users/:id/prompts"
-              exact
-              render={() => (
-                <PromptSelectContainer user_id={this.state.user_id} />
-              )}
-            />
-            <Route
-              path="/users/prompts/:prompt_id"
-              render={() => <PromptContainer user_id={this.state.user_id} />}
-            />
+          <Route path="/" exact render={() => <LandingContainer />} />
+          <Route
+            path="/login"
+            render={() => <LoginContainer handleLogin={this.onLogin} />}
+          />
+          <Route
+            path="/sign-up"
+            render={() => <SignUpContainer handleLogin={this.onLogin} />}
+          />
+          <Route
+            path="/curriculum"
+            render={() => (
+              <CurriculumContainer current_user={this.state.current_user} />
+            )}
+          />
+          <Route
+            path="/lesson"
+            render={() => (
+              <LessonContainer current_user={this.state.current_user} />
+            )}
+          />
+          <Route
+            path="/users/:id/prompts"
+            exact
+            render={() => (
+              <PromptSelectContainer current_user={this.state.current_user} />
+            )}
+          />
+          <Route
+            path="/users/prompts/:prompt_id"
+            render={() => <PromptContainer user_id={this.state.user_id} />}
+          />
         </div>
       </Router>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PageTitle from "./PageTitle";
-import AvatarImage from "./AvatarImage";
 import SignInForm from "./SignInForm";
+import { Image } from "semantic-ui-react"
 
 class LoginContainer extends Component {
   
@@ -9,7 +9,7 @@ class LoginContainer extends Component {
     return (
       <div className="login-container">
         <PageTitle titleText="SIGN IN" />
-        <AvatarImage url="https://media.giphy.com/media/13jbqcAvizxKUg/giphy.gif" />
+        <Image src="https://media.giphy.com/media/13jbqcAvizxKUg/giphy.gif" />
         <SignInForm handleLogin={this.props.handleLogin}/>
       </div>
     );

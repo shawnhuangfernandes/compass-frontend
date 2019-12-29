@@ -13,7 +13,6 @@ class SignInForm extends Component {
   }
 
   onSubmitForm = async e => {
-    console.log(this.props);
     const fetchUser = await fetch("http://localhost:3000/users/find-user", {
       method: "POST",
       headers: {
@@ -25,7 +24,7 @@ class SignInForm extends Component {
     });
     const user = await fetchUser.json();
     if (user.message === undefined) {
-      this.props.handleLogin(user.id);
+      this.props.handleLogin(user);
       await this.setState({
         toCurriculum: true
       });
@@ -47,8 +46,9 @@ class SignInForm extends Component {
   };
 
   render() {
-    // return <Redirect to="/curriculum" />;
-    if (this.state.toCurriculum === true) {
+    if (this.state.toSignUp === true) {
+      return <Redirect to="/sign-up" />;
+    } else if (this.state.toCurriculum === true) {
       return <Redirect to="/curriculum" />;
     } else {
       return (
