@@ -1,14 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import PageTitle from "./PageTitle";
+import { Image, Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class LessonContainer extends Component {
-    render() {
-        return (
-            <div>
-                Lesson
-                You are logged in as user #{this.props.user_id}
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <PageTitle titleText="Your Lessons" />
+        <Image src="https://media.giphy.com/media/2J2XDIiYBFIu4/giphy.gif" />
+        <Link to={`/prompts`}>
+          <Button>Continue</Button>
+        </Link>
+        <Link to={`/curriculum`}>
+          <Button>Back</Button>
+        </Link>
+      </div>
+    );
+  }
 }
 
 export default LessonContainer;

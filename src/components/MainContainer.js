@@ -6,7 +6,7 @@ import CurriculumContainer from "../components/CurriculumContainer";
 import LessonContainer from "../components/LessonContainer";
 import PromptSelectContainer from "../components/PromptSelectContainer";
 import PromptContainer from "../components/PromptContainer";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class MainContainer extends Component {
   constructor(props) {
@@ -26,38 +26,45 @@ class MainContainer extends Component {
     return (
       <Router>
         <div>
-          <Route path="/" exact render={() => <LandingContainer />} />
-          <Route
-            path="/login"
-            render={() => <LoginContainer handleLogin={this.onLogin} />}
-          />
-          <Route
-            path="/sign-up"
-            render={() => <SignUpContainer handleLogin={this.onLogin} />}
-          />
-          <Route
-            path="/curriculum"
-            render={() => (
-              <CurriculumContainer current_user={this.state.current_user} />
-            )}
-          />
-          <Route
-            path="/lesson"
-            render={() => (
-              <LessonContainer current_user={this.state.current_user} />
-            )}
-          />
-          <Route
-            path="/users/:id/prompts"
-            exact
-            render={() => (
-              <PromptSelectContainer current_user={this.state.current_user} />
-            )}
-          />
-          <Route
-            path="/users/prompts/:prompt_id"
-            render={() => <PromptContainer user_id={this.state.user_id} />}
-          />
+          <Switch>
+            <Route path="/" exact render={() => <LandingContainer />} />
+            <Route
+              path="/login"
+              render={() => <LoginContainer handleLogin={this.onLogin} />}
+            />
+            <Route
+              path="/sign-up"
+              render={() => <SignUpContainer handleLogin={this.onLogin} />}
+            />
+            <Route
+              path="/curriculum"
+              render={() => (
+                <CurriculumContainer
+                  current_user={this.state.current_user}
+                  handleLogout={this.onLogout}
+                />
+              )}
+            />
+            <Route
+              path="/lesson"
+              render={() => (
+                <LessonContainer current_user={this.state.current_user} />
+              )}
+            />
+            <Route
+              path="/prompts"
+              exact
+              render={() => (
+                <PromptSelectContainer current_user={this.state.current_user} />
+              )}
+            />
+            <Route
+              path={`/prompts/:prompt_id`}
+              render={(routerProps) => (
+                <PromptContainer {...routerProps} current_user={this.state.current_user} />
+              )}
+            />
+          </Switch>
         </div>
       </Router>
     );
