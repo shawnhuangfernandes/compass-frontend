@@ -105,6 +105,8 @@ class PromptContainer extends Component {
         complete: this.state.isComplete
       })
     });
+
+    console.log(await fetchResponse.json());
   };
 }
 

@@ -53,7 +53,7 @@ class SignInForm extends Component {
     } else {
       return (
         <div>
-          <Form onSubmit={this.onSubmitForm}>
+          <Form onSubmit={this.onSubmitForm} size="massive">
             <Form.Field>
               <label>Username</label>
               <input
@@ -61,8 +61,10 @@ class SignInForm extends Component {
                 placeholder="Please Enter A Username"
               />
             </Form.Field>
-            <Button type="submit">Submit</Button>
-            <Button onClick={this.handleSignUpClick}>Sign Up</Button>
+            <div className="login-button-container">
+              <Button type="submit" size="massive" content="Login" basic inverted color='violet'/>
+              <Button onClick={this.handleSignUpClick} size="massive" content="Sign Up" basic inverted color='violet'/>
+            </div>
           </Form>
         </div>
       );

@@ -15,7 +15,7 @@ class LandingContainer extends Component {
         </div>
         <div className="landing-button-container">
         <Link to="login">
-          <Button>Enter</Button>
+          <Button size="massive" basic inverted color='violet' content="Login"/>
         </Link>
         </div>
       </div>

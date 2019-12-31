@@ -25,13 +25,35 @@ class CurriculumContainer extends Component {
       return <Redirect to="/login" />;
     } else {
       return (
-        <div>
+        <div className="curriculum-container">
           <PageTitle titleText="Your Curriculum" />
-          <Image src="https://media.giphy.com/media/3htHB35GbROukV2bnR/giphy.gif" />
-          <Link to="/lesson">
-            <Button onClick={this.goToLessonSelection}>Explore</Button>
-          </Link>
-          <Button onClick={this.goToLogin}>Logout</Button>
+          <div className="curriculum-image-container">
+            <Image src="https://media.giphy.com/media/3htHB35GbROukV2bnR/giphy.gif" />
+          </div>
+          <div className="curriculum-button-container">
+            <div className="curriculum-selection-card">
+              <Link to="/lesson">
+                <Button
+                  onClick={this.goToLessonSelection}
+                  size="massive"
+                  basic
+                  inverted
+                  color="violet"
+                  content="Explore"
+                />
+              </Link>
+            </div>
+            <div className="curriculum-selection-card">
+            <Button
+              onClick={this.goToLogin}
+              size="massive"
+              basic
+              inverted
+              color="violet"
+              content="Logout"
+            />
+            </div>
+          </div>
         </div>
       );
     }

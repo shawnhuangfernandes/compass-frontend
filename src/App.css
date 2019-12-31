@@ -1,5 +1,5 @@
 body {
-  background-color: #e0961d
+  background-color: #0B011C
 }
 
 #root {
@@ -17,11 +17,8 @@ body {
 .landing-container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 20vh, 60vh, 20vh;
-}
-
-.landing-image {
-  
+  grid-template-rows: 10vh 60vh 30vh;
+  padding:1%;
 }
 
 .landing-image-container {
@@ -36,11 +33,109 @@ body {
   justify-content: center;
 }
 
+.login-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh 60vh 30vh;
+  padding:1%;
+}
+
+.login-image-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.ui.form .field > label {
+  display: block;
+  margin: 0 0 .28571429rem 0;
+  color: rgba(0,0,0,.87);
+  font-size: 1.5em;
+  font-weight: 700;
+  color: rgb(163, 83, 163);
+  text-transform: none;
+  text-align: center;
+  padding: 2%;
+}
+
+.login-button-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.signup-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh 60vh 30vh
+}
+
+.signup-image-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.ui.form .field > label {
+  display: block;
+  margin: 0 0 .28571429rem 0;
+  color: rgba(0,0,0,.87);
+  font-size: 1.5em;
+  font-weight: 700;
+  color: rgb(163, 83, 163);
+  text-transform: none;
+  text-align: center;
+  padding: 2%;
+}
+
+.signup-button-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.curriculum-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: [v1] 65% [v2] 35% [v3];
+  grid-template-rows: [h1] 10% [h2] 70% [h3]
+}
+
+.curriculum-container > .page-title {
+  grid-column-start: 1;
+  grid-column-end: span v3;
+  grid-row-start: 1;
+  grid-row-end: span h2;
+}
+
+.curriculum-image-container {
+  grid-column-start: 2;
+  grid-column-end: span v3;
+  grid-row-start: 1;
+  grid-row-end: span h2;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.curriculum-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.curriculum-selection-card {
+  display:flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
 .page-title {
   display: flex;
   align-self: center;
   justify-content: center;
   font-size: 3em;
+  color: rgb(163, 83, 163);
 }
 
 

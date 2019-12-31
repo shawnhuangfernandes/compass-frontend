@@ -61,7 +61,7 @@ class SignUpForm extends Component {
     } else {
       return (
         <div>
-          <Form onSubmit={this.onSubmitForm}>
+          <Form onSubmit={this.onSubmitForm} size="massive">
             <Form.Field>
               <label>Choose A Username</label>
               <input
@@ -76,8 +76,15 @@ class SignUpForm extends Component {
                 placeholder="Please Enter Your Name"
               />
             </Form.Field>
-            <Button type="submit">Sign Up</Button>
-            <Button onClick={this.handleBackClick}>Go Back</Button>
+            <div className="signup-button-container">
+              <Button type="submit" size="massive" content="Register" basic inverted color='violet'/>
+              <Button
+                onClick={this.handleBackClick}
+                size="massive"
+                content="Back"
+                basic inverted color='violet'
+              />
+            </div>
           </Form>
         </div>
       );
