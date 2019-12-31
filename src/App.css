@@ -98,7 +98,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: [v1] 65% [v2] 35% [v3];
-  grid-template-rows: [h1] 10% [h2] 70% [h3]
+  grid-template-rows: [h1] 10% [h2] 90% [h3]
 }
 
 .curriculum-container > .page-title {
@@ -109,31 +109,55 @@ body {
 }
 
 .curriculum-image-container {
-  grid-column-start: 2;
-  grid-column-end: span v3;
-  grid-row-start: 1;
-  grid-row-end: span h2;
+  grid-column-start: 1;
+  grid-column-end: span v2;
+  grid-row-start: 2;
+  grid-row-end: span h3;
   display: flex;
   align-self: center;
   justify-content: center;
 }
 
 .curriculum-button-container {
+  grid-column-start: 2;
+  grid-column-end: span v3;
+  grid-row-start: 2;
+  grid-row-end: span h3;
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .curriculum-selection-card {
   display:flex;
   flex-direction: column;
-  justify-items: center;
+  align-items: center;
+  padding: 6%;
+}
+
+.lesson-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh 60vh 30vh
+}
+
+.lesson-image-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.lesson-button-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
 }
 
 .page-title {
   display: flex;
-  align-self: center;
   justify-content: center;
+  align-items: center;
   font-size: 3em;
   color: rgb(163, 83, 163);
 }

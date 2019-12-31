@@ -6,15 +6,19 @@ import { Link } from "react-router-dom";
 class LessonContainer extends Component {
   render() {
     return (
-      <div>
+      <div className="lesson-container">
         <PageTitle titleText="Your Lessons" />
-        <Image src="https://media.giphy.com/media/2J2XDIiYBFIu4/giphy.gif" />
-        <Link to={`/prompts`}>
-          <Button>Continue</Button>
-        </Link>
-        <Link to={`/curriculum`}>
-          <Button>Back</Button>
-        </Link>
+        <div className="lesson-image-container">
+          <Image src="https://media.giphy.com/media/2J2XDIiYBFIu4/giphy.gif" />
+        </div>
+        <div className="lesson-button-container">
+          <Link to={`/prompts`}>
+            <Button size="massive" basic inverted color='violet' content="Begin"/>
+          </Link>
+          <Link to={`/curriculum`}>
+          <Button size="massive" basic inverted color='violet' content="Back"/>
+          </Link>
+        </div>
       </div>
     );
   }

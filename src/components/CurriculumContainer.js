@@ -32,6 +32,9 @@ class CurriculumContainer extends Component {
           </div>
           <div className="curriculum-button-container">
             <div className="curriculum-selection-card">
+              <div className="curriculum-card-image-container">
+                <Image src="https://media.giphy.com/media/3oKIPtjElfqwMOTbH2/giphy.gif" />
+              </div>
               <Link to="/lesson">
                 <Button
                   onClick={this.goToLessonSelection}
@@ -44,14 +47,17 @@ class CurriculumContainer extends Component {
               </Link>
             </div>
             <div className="curriculum-selection-card">
-            <Button
-              onClick={this.goToLogin}
-              size="massive"
-              basic
-              inverted
-              color="violet"
-              content="Logout"
-            />
+              <div className="curriculum-card-image-container">
+                <Image src="https://media.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif" />
+              </div>
+              <Button
+                onClick={this.goToLogin}
+                size="massive"
+                basic
+                inverted
+                color="violet"
+                content="Logout"
+              />
             </div>
           </div>
         </div>
