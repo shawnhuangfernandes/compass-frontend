@@ -24,8 +24,8 @@ class MainContainer extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
+      <div className="main-container">
+        <Router>
           <Switch>
             <Route path="/" exact render={() => <LandingContainer />} />
             <Route
@@ -59,14 +59,17 @@ class MainContainer extends Component {
               )}
             />
             <Route
-              path={`/prompts/:prompt_id`}
-              render={(routerProps) => (
-                <PromptContainer {...routerProps} current_user={this.state.current_user} />
+              path={`/users/:user_id/prompts/:prompt_id`}
+              render={routerProps => (
+                <PromptContainer
+                  {...routerProps}
+                  current_user={this.state.current_user}
+                />
               )}
             />
           </Switch>
-        </div>
-      </Router>
+        </Router>
+      </div>
     );
   }
 }

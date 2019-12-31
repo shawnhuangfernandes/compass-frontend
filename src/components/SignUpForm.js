@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Button, Form } from "semantic-ui-react";
-import AvatarSelection from "./AvatarSelection";
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -10,8 +9,7 @@ class SignUpForm extends Component {
       usernameEntry: "",
       nameEntry: "",
       toCurriculum: false,
-      toLogin: false,
-      selectedAvatar: ""
+      toLogin: false
     };
   }
 
@@ -23,8 +21,7 @@ class SignUpForm extends Component {
       },
       body: JSON.stringify({
         username: this.state.usernameEntry,
-        name: this.state.nameEntry,
-        icon_gif: this.state.selectedAvatar
+        name: this.state.nameEntry
       })
     });
     const user = await fetchUser.json();
@@ -36,12 +33,6 @@ class SignUpForm extends Component {
     } else {
       console.log(user.message);
     }
-  };
-
-  onSelectAvatar = async url => {
-    await this.setState({
-      selectedAvatar: url
-    });
   };
 
   handleBackClick = async () => {
@@ -70,7 +61,6 @@ class SignUpForm extends Component {
     } else {
       return (
         <div>
-          <AvatarSelection handleSelectAvatar={this.onSelectAvatar} />
           <Form onSubmit={this.onSubmitForm}>
             <Form.Field>
               <label>Choose A Username</label>

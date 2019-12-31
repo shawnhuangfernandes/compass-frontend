@@ -1,5 +1,46 @@
+body {
+  background-color: #e0961d
+}
+
+#root {
+  height: 100vh;
+}
+
 .App {
-  text-align: center;
+  height: 100vh;
+}
+
+.main-container {
+  height: 100vh;
+}
+
+.landing-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 20vh, 60vh, 20vh;
+}
+
+.landing-image {
+  
+}
+
+.landing-image-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.landing-button-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.page-title {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  font-size: 3em;
 }
 
 

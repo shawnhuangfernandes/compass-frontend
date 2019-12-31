@@ -7,32 +7,32 @@ class PromptsTable extends Component {
     return (
       <Grid divided="vertically">
         <Grid.Row>
-          <Link to={`/prompts/1`}>
+          <Link to={`/users/${this.props.current_user.id}/prompts/1`}>
             <Segment>Reading: Why You're Here</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/prompts/2`}>
+          <Link to={`/users/${this.props.current_user.id}/prompts/2`}>
             <Segment>Video: Know Your Why</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/prompts/3`}>
+          <Link to={`/users/${this.props.current_user.id}/prompts/3`}>
             <Segment>Activity: A Purpose Interview</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/prompts/4`}>
+          <Link to={`/users/${this.props.current_user.id}/prompts/4`}>
             <Segment>Reading: Purpose Statements</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/prompts/5`}>
+          <Link to={`/users/${this.props.current_user.id}/prompts/5`}>
             <Segment>Activity: Writing a Purpose Statement</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/prompts/6`}>
+          <Link to={`/users/${this.props.current_user.id}/prompts/6`}>
             <Segment>Video: Conclusion</Segment>
           </Link>
         </Grid.Row>
