@@ -13,7 +13,7 @@ class SignInForm extends Component {
   }
 
   onSubmitForm = async e => {
-    const fetchUser = await fetch("http://localhost:3000/users/find-user", {
+    const fetchUser = await fetch("http://localhost:3000/find-user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

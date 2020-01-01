@@ -12,7 +12,7 @@ class LessonContainer extends Component {
           <Image src="https://media.giphy.com/media/2J2XDIiYBFIu4/giphy.gif" />
         </div>
         <div className="lesson-button-container">
-          <Link to={`/prompts`}>
+          <Link to={`users/${this.props.current_user.id}/prompts`}>
             <Button size="massive" basic inverted color='violet' content="Begin"/>
           </Link>
           <Link to={`/curriculum`}>

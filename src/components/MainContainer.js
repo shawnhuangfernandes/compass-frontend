@@ -37,7 +37,7 @@ class MainContainer extends Component {
               render={() => <SignUpContainer handleLogin={this.onLogin} />}
             />
             <Route
-              path="/curriculum"
+              path="users/:user_id/curriculum"
               render={() => (
                 <CurriculumContainer
                   current_user={this.state.current_user}
@@ -46,16 +46,19 @@ class MainContainer extends Component {
               )}
             />
             <Route
-              path="/lesson"
+              path="users/:user_id/lesson"
               render={() => (
                 <LessonContainer current_user={this.state.current_user} />
               )}
             />
             <Route
-              path="/prompts"
+              path="/users/:user_id/prompts"
               exact
-              render={() => (
-                <PromptSelectContainer current_user={this.state.current_user} />
+              render={routerProps => (
+                <PromptSelectContainer
+                  {...routerProps}
+                  current_user={this.state.current_user}
+                />
               )}
             />
             <Route

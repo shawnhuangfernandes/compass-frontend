@@ -14,6 +14,14 @@ body {
   height: 100vh;
 }
 
+.page-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color: rgb(163, 83, 163);
+}
+
 .landing-container {
   height: 100vh;
   display: grid;
@@ -154,12 +162,98 @@ body {
   justify-content: center;
 }
 
-.page-title {
+.prompt-selection-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: [v1] 25% [v2] 75% [v3];
+  grid-template-rows: [h1] 10% [h2] 60% [h3] 30% [h4]
+}
+
+.prompt-selection-container > .page-title {
+  grid-column-start: 1;
+  grid-column-end: span v3;
+  grid-row-start: 1;
+  grid-row-end: span h2;
+}
+
+.prompt-selection-table-container {
+  grid-column-start: 1;
+  grid-column-end: span v2;
+  grid-row-start: 2;
+  grid-row-end: span h3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ui.grid {
+  margin-top: -1rem;
+  margin-left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 0;
+}
+
+.prompt-selection-image-container {
+  grid-column-start: 2;
+  grid-column-end: span v3;
+  grid-row-start: 2;
+  grid-row-end: span h3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.prompt-selection-image-container > img {
+  align-self: center;
+}
+
+.prompt-selection-button-container {
+  grid-column-start: 1;
+  grid-column-end: span v3;
+  grid-row-start: 3;
+  grid-row-end: span h4;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.prompt-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh 60vh 30vh
+}
+
+.ui.embed {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: relative;
+  height: auto;
+  background: #dcddde;
+}
+
+.prompt-button-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 3em;
-  color: rgb(163, 83, 163);
+  align-self: center;
+
 }
+
+
+
+
+
 
 

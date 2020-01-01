@@ -9,7 +9,8 @@ class SignUpForm extends Component {
       usernameEntry: "",
       nameEntry: "",
       toCurriculum: false,
-      toLogin: false
+      toLogin: false,
+      user: {}
     };
   }
 
@@ -28,7 +29,8 @@ class SignUpForm extends Component {
     if (user.message === undefined) {
       this.props.handleLogin(user);
       await this.setState({
-        toCurriculum: true
+        toCurriculum: true, 
+        user: user
       });
     } else {
       console.log(user.message);

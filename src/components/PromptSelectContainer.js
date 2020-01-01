@@ -6,14 +6,21 @@ import { Link } from "react-router-dom";
 
 class PromptSelectContainer extends Component {
   render() {
+    console.log(this.props)
     return (
-      <div>
+      <div className="prompt-selection-container">
         <PageTitle titleText="Your Prompts" />
-        <PromptsTable current_user={this.props.current_user} />
-        <Image src="https://media.giphy.com/media/28GHfhGFWpFgsQB4wR/giphy.gif" />
-        <Link to="/lesson">
-          <Button>Back</Button>
-        </Link>
+        <div className="prompt-selection-table-container">
+          <PromptsTable current_user_id={this.props.match.params.user_id} />
+        </div>
+        <div className="prompt-selection-image-container">
+          <Image src="https://media.giphy.com/media/28GHfhGFWpFgsQB4wR/giphy.gif" />
+        </div>
+        <div className="prompt-selection-button-container">
+          <Link to="/lesson">
+          <Button size="massive" basic inverted color='violet' content="Back"/>
+          </Link>
+        </div>
       </div>
     );
   }

@@ -7,33 +7,33 @@ class PromptsTable extends Component {
     return (
       <Grid divided="vertically">
         <Grid.Row>
-          <Link to={`/users/${this.props.current_user.id}/prompts/1`}>
-            <Segment>Reading: Why You're Here</Segment>
+          <Link to={`/users/${this.props.current_user_id}/prompts/1`}>
+            <Segment inverted color='violet'>Reading: Why You're Here</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/users/${this.props.current_user.id}/prompts/2`}>
-            <Segment>Video: Know Your Why</Segment>
+          <Link to={`/users/${this.props.current_user_id}/prompts/2`}>
+            <Segment inverted color='violet'>Video: Know Your Why</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/users/${this.props.current_user.id}/prompts/3`}>
-            <Segment>Activity: A Purpose Interview</Segment>
+          <Link to={`/users/${this.props.current_user_id}/prompts/3`}>
+            <Segment inverted color='violet'>Activity: A Purpose Interview</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/users/${this.props.current_user.id}/prompts/4`}>
-            <Segment>Reading: Purpose Statements</Segment>
+          <Link to={`/users/${this.props.current_user_id}/prompts/4`}>
+            <Segment inverted color='violet'>Reading: Purpose Statements</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/users/${this.props.current_user.id}/prompts/5`}>
-            <Segment>Activity: Writing a Purpose Statement</Segment>
+          <Link to={`/users/${this.props.current_user_id}/prompts/5`}>
+            <Segment inverted color='violet'>Activity: Writing a Purpose Statement</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
-          <Link to={`/users/${this.props.current_user.id}/prompts/6`}>
-            <Segment>Video: Conclusion</Segment>
+          <Link to={`/users/${this.props.current_user_id}/prompts/6`}>
+            <Segment inverted color='violet'>Video: Conclusion</Segment>
           </Link>
         </Grid.Row>
       </Grid>
