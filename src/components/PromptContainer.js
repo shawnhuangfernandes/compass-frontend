@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import PageTitle from "./PageTitle";
-import { Message, Embed, Form, TextArea, Button } from "semantic-ui-react";
+import { Message, Form, TextArea, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import VideoPromptContainer from "./VideoPromptContainer";
 
 class PromptContainer extends Component {
   previousLink = `/users/${this.props.match.params.user_id}/prompts`;
@@ -36,7 +37,7 @@ class PromptContainer extends Component {
     return (
       <div className="prompt-container">
         <PageTitle titleText={this.state.prompt.title} />
-        {this.determineMediaType()}
+        <div className="prompt-body-container">{this.determineMediaType()}</div>
         <div className="prompt-button-container">
           <Button
             toggle
@@ -66,7 +67,6 @@ class PromptContainer extends Component {
       case "Reading":
         return (
           <Message
-            className="prompt-reading"
             color="violet"
             size="massive"
             header={this.state.prompt.header}
@@ -75,22 +75,19 @@ class PromptContainer extends Component {
         );
       case "Video":
         return (
-          <Embed
-            className="prompt-video"
-            icon="right circle arrow"
-            placeholder=""
-            url={this.state.prompt.body}
-          />
+          <div className="prompt-video-container">
+            <VideoPromptContainer videoId="rLdQz2uZaoE" />
+          </div>
         );
       case "Activity":
         return (
-          <Form>
+          <Form size="massive">
             <Form.Field
-              className="prompt-activity"
               onChange={this.handleTextInput}
               control={TextArea}
               label={this.state.prompt.body}
               value={this.state.userInput}
+              rows={20}
             />
           </Form>
         );

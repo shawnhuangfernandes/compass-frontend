@@ -144,6 +144,11 @@ body {
   padding: 6%;
 }
 
+.curriculum-card-image-container > img {
+  max-height: 200px;
+  max-width: auto;
+}
+
 .lesson-container {
   height: 100vh;
   display: grid;
@@ -232,23 +237,33 @@ body {
 .prompt-container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 10vh 60vh 30vh
+  grid-template-rows: 10vh 80vh 10vh
 }
 
-.ui.embed {
+.prompt-body-container {
   display: flex;
-  align-self: center;
   justify-content: center;
-  position: relative;
-  height: auto;
-  background: #dcddde;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.ui.form .field > label {
+  display: block;
+  line-height: normal;
+  margin: 0 0 .28571429rem 0;
+  color: rgba(0,0,0,.87);
+  font-size: 1.5em;
+  font-weight: 700;
+  color: rgb(163, 83, 163);
+  text-transform: none;
+  text-align: center;
+  padding: 2%;
 }
 
 .prompt-button-container {
   display: flex;
   justify-content: center;
   align-self: center;
-
 }
 
 

@@ -6,6 +6,7 @@ import CurriculumContainer from "../components/CurriculumContainer";
 import LessonContainer from "../components/LessonContainer";
 import PromptSelectContainer from "../components/PromptSelectContainer";
 import PromptContainer from "../components/PromptContainer";
+import UserEditContainer from '../components/UserEditContainer';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class MainContainer extends Component {
@@ -37,7 +38,7 @@ class MainContainer extends Component {
               render={() => <SignUpContainer handleLogin={this.onLogin} />}
             />
             <Route
-              path="users/:user_id/curriculum"
+              path="/curriculum"
               render={() => (
                 <CurriculumContainer
                   current_user={this.state.current_user}
@@ -46,7 +47,7 @@ class MainContainer extends Component {
               )}
             />
             <Route
-              path="users/:user_id/lesson"
+              path="/lesson"
               render={() => (
                 <LessonContainer current_user={this.state.current_user} />
               )}
@@ -57,7 +58,7 @@ class MainContainer extends Component {
               render={routerProps => (
                 <PromptSelectContainer
                   {...routerProps}
-                  current_user={this.state.current_user}
+                    current_user={this.state.current_user}
                 />
               )}
             />
@@ -67,6 +68,17 @@ class MainContainer extends Component {
                 <PromptContainer
                   {...routerProps}
                   current_user={this.state.current_user}
+                />
+              )}
+            />
+            <Route
+              exact
+              path={`/users/:user_id/settings`}
+              render={routerProps => (
+                <UserEditContainer
+                  {...routerProps}
+                  current_user={this.state.current_user}
+                  handleLogin={this.onLogin}
                 />
               )}
             />

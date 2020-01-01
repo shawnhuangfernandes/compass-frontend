@@ -18,6 +18,8 @@ class CurriculumContainer extends Component {
     });
   };
 
+  editLink = `users/${this.props.current_user.id}/settings`;
+
   render() {
     if (this.state.toLessonSelection === true) {
       return <Redirect to="/lesson" />;
@@ -46,6 +48,21 @@ class CurriculumContainer extends Component {
                 />
               </Link>
             </div>
+            <div className="curriculum-selection-card">
+              <div className="curriculum-card-image-container">
+                <Image src="https://media.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif" />
+              </div>
+              <Link to={this.editLink}>
+                <Button
+                  size="massive"
+                  basic
+                  inverted
+                  color="violet"
+                  content="Account Settings"
+                />
+              </Link>
+            </div>
+
             <div className="curriculum-selection-card">
               <div className="curriculum-card-image-container">
                 <Image src="https://media.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif" />

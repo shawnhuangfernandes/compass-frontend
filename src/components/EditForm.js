@@ -2,20 +2,26 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Button, Form } from "semantic-ui-react";
 
-class SignUpForm extends Component {
+class EditForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usernameEntry: "",
-      nameEntry: "",
+      usernameEntry: "AL",
+      nameEntry: "CAPWN",
       toCurriculum: false,
       toLogin: false
     };
   }
 
+  handleBackClick = async () => {
+    await this.setState({
+      toLogin: true
+    });
+  };
+
   onSubmitForm = async e => {
-    const fetchUser = await fetch("http://localhost:3000/users/", {
-      method: "POST",
+    const fetchUser = await fetch(`http://localhost:3000/users/${this.props.current_user.id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
@@ -33,12 +39,6 @@ class SignUpForm extends Component {
     } else {
       console.log(user.message);
     }
-  };
-
-  handleBackClick = async () => {
-    await this.setState({
-      toLogin: true
-    });
   };
 
   handleUsernameChange = e => {
@@ -66,23 +66,32 @@ class SignUpForm extends Component {
               <label>Choose A Username</label>
               <input
                 onChange={this.handleUsernameChange}
-                placeholder="Please Enter A Username"
+                placeholder={this.props.current_user.username}
               />
             </Form.Field>
             <Form.Field>
               <label>Choose A Name</label>
               <input
                 onChange={this.handleNameChange}
-                placeholder="Please Enter Your Name"
+                placeholder={this.props.current_user.name}
               />
             </Form.Field>
             <div className="signup-button-container">
-              <Button type="submit" size="massive" content="Register" basic inverted color='violet'/>
+              <Button
+                type="submit"
+                size="massive"
+                content="Register"
+                basic
+                inverted
+                color="violet"
+              />
               <Button
                 onClick={this.handleBackClick}
                 size="massive"
                 content="Back"
-                basic inverted color='violet'
+                basic
+                inverted
+                color="violet"
               />
             </div>
           </Form>
@@ -92,4 +101,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm;
+export default EditForm;
