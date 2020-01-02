@@ -32,7 +32,7 @@ constructor(props) {
       <div className="signup-container">
         <PageTitle titleText="Edit Your Account" />
         <div className="signup-image-container">
-          <Image src="https://media.giphy.com/media/13jbqcAvizxKUg/giphy.gif" />
+          <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/apple.png" />
         </div>
         <EditForm
           handleEdit={(e) => this.props.Click}

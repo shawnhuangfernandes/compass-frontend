@@ -76,7 +76,7 @@ class PromptContainer extends Component {
       case "Video":
         return (
           <div className="prompt-video-container">
-            <VideoPromptContainer videoId="rLdQz2uZaoE" />
+            <VideoPromptContainer videoId={this.state.prompt.body} />
           </div>
         );
       case "Activity":

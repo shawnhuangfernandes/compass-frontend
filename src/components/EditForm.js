@@ -72,7 +72,7 @@ class EditForm extends Component {
     if (this.state.toLogin === true) {
       return <Redirect to="/login" />;
     } else if (this.state.toCurriculum === true) {
-      return <Redirect to={`/curriculum`} />;
+      return <Redirect to={'curriculum'} />;
     } else {
       return (
         <div>

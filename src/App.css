@@ -75,7 +75,7 @@ body {
 .signup-container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 10vh 60vh 30vh
+  grid-template-rows: 10vh 40vh 50vh
 }
 
 .signup-image-container {
@@ -191,6 +191,11 @@ body {
   justify-content: center;
 }
 
+.ui.massive.form {
+  font-size: 1.71428571rem;
+  width: 100%;
+}
+
 .ui.grid {
   margin-top: -1rem;
   margin-left: 2rem;
@@ -243,6 +248,7 @@ body {
 .prompt-body-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-left: 10%;
   padding-right: 10%;
 }

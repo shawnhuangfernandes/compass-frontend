@@ -6,7 +6,7 @@ import CurriculumContainer from "../components/CurriculumContainer";
 import LessonContainer from "../components/LessonContainer";
 import PromptSelectContainer from "../components/PromptSelectContainer";
 import PromptContainer from "../components/PromptContainer";
-import UserEditContainer from '../components/UserEditContainer';
+import UserEditContainer from "../components/UserEditContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class MainContainer extends Component {
@@ -46,7 +46,7 @@ class MainContainer extends Component {
             <Route
               exact
               path="/users/:user_id/curriculum"
-              render={(routerProps) => (
+              render={routerProps => (
                 <CurriculumContainer
                   {...routerProps}
                   current_user={this.state.current_user}
@@ -56,8 +56,12 @@ class MainContainer extends Component {
             />
             <Route
               path="/lesson"
-              render={() => (
-                <LessonContainer current_user={this.state.current_user} />
+              exact
+              render={routerProps => (
+                <LessonContainer
+                  {...routerProps}
+                  current_user={this.state.current_user}
+                />
               )}
             />
             <Route
@@ -66,11 +70,12 @@ class MainContainer extends Component {
               render={routerProps => (
                 <PromptSelectContainer
                   {...routerProps}
-                    current_user={this.state.current_user}
+                  current_user={this.state.current_user}
                 />
               )}
             />
             <Route
+              exact
               path={`/users/:user_id/prompts/:prompt_id`}
               render={routerProps => (
                 <PromptContainer

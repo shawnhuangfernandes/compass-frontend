@@ -10,7 +10,7 @@ class LandingContainer extends Component {
         <div className="landing-image-container">
           <Image
             className="landing-image"
-            src="https://media.giphy.com/media/ijxKTF6iE4K4M/giphy.gif"
+            src="https://mod4-project.s3.us-east-2.amazonaws.com/compass.png"
           />
         </div>
         <div className="landing-button-container">

@@ -8,7 +8,7 @@ class PromptsTable extends Component {
       <Grid divided="vertically">
         <Grid.Row>
           <Link to={`/users/${this.props.current_user_id}/prompts/1`}>
-            <Segment inverted color='violet' size="massive">Reading: Why You're Here</Segment>
+            <Segment inverted color='violet' size="massive">Reading: The Why</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
@@ -18,22 +18,22 @@ class PromptsTable extends Component {
         </Grid.Row>
         <Grid.Row>
           <Link to={`/users/${this.props.current_user_id}/prompts/3`}>
-            <Segment inverted color='violet' size="massive">Activity: A Purpose Interview</Segment>
+            <Segment inverted color='violet' size="massive">Activity: The Three Main Questions</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
           <Link to={`/users/${this.props.current_user_id}/prompts/4`}>
-            <Segment inverted color='violet' size="massive">Reading: Purpose Statements</Segment>
+            <Segment inverted color='violet' size="massive">Reading: Why You Should Care About Purpose</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
           <Link to={`/users/${this.props.current_user_id}/prompts/5`}>
-            <Segment inverted color='violet' size="massive">Activity: Writing a Purpose Statement</Segment>
+            <Segment inverted color='violet' size="massive">Reading: How To Write A Purpose Statement</Segment>
           </Link>
         </Grid.Row>
         <Grid.Row>
           <Link to={`/users/${this.props.current_user_id}/prompts/6`}>
-            <Segment inverted color='violet' size="massive">Video: Conclusion</Segment>
+            <Segment inverted color='violet' size="massive">Activity: Write A Purpose Statement</Segment>
           </Link>
         </Grid.Row>
       </Grid>

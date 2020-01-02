@@ -28,12 +28,12 @@ class CurriculumContainer extends Component {
         <div className="curriculum-container">
           <PageTitle titleText="Your Curriculum" />
           <div className="curriculum-image-container">
-            <Image src="https://media.giphy.com/media/3htHB35GbROukV2bnR/giphy.gif" />
+            <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/student.png" />
           </div>
           <div className="curriculum-button-container">
             <div className="curriculum-selection-card">
               <div className="curriculum-card-image-container">
-                <Image src="https://media.giphy.com/media/3oKIPtjElfqwMOTbH2/giphy.gif" />
+                <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/viking-ship.png" />
               </div>
               <Link to="/lesson">
                 <Button
@@ -48,7 +48,7 @@ class CurriculumContainer extends Component {
             </div>
             <div className="curriculum-selection-card">
               <div className="curriculum-card-image-container">
-                <Image src="https://media.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif" />
+                <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/lock.png" />
               </div>
               <Link to={`/users/${this.props.match.params.user_id}/settings`}>
                 <Button
@@ -63,7 +63,7 @@ class CurriculumContainer extends Component {
 
             <div className="curriculum-selection-card">
               <div className="curriculum-card-image-container">
-                <Image src="https://media.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif" />
+                <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/skull.png" />
               </div>
               <Button
                 onClick={this.goToLogin}

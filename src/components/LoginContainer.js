@@ -9,7 +9,7 @@ class LoginContainer extends Component {
       <div className="login-container">
         <PageTitle titleText="SIGN IN" />
         <div className="login-image-container">
-          <Image src="https://media.giphy.com/media/13jbqcAvizxKUg/giphy.gif" />
+          <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/door.png" />
         </div>
         <SignInForm handleLogin={this.props.handleLogin} />
       </div>

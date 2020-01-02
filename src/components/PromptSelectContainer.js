@@ -14,10 +14,10 @@ class PromptSelectContainer extends Component {
           <PromptsTable current_user_id={this.props.match.params.user_id} />
         </div>
         <div className="prompt-selection-image-container">
-          <Image src="https://media.giphy.com/media/28GHfhGFWpFgsQB4wR/giphy.gif" />
+          <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/book.png" />
         </div>
         <div className="prompt-selection-button-container">
-          <Link to="/lesson">
+          <Link to={`users/${this.props.match.params.user_id}/lesson`}>
           <Button size="massive" basic inverted color='violet' content="Back"/>
           </Link>
         </div>

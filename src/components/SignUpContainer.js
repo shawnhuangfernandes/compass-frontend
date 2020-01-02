@@ -9,7 +9,7 @@ class SignUpContainer extends Component {
       <div className="signup-container">
         <PageTitle titleText="SIGN UP" />
         <div className="signup-image-container">
-          <Image src="https://media.giphy.com/media/13jbqcAvizxKUg/giphy.gif" />
+          <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/crown.png" />
         </div>
         <SignUpForm handleLogin={this.props.handleLogin} />
       </div>
