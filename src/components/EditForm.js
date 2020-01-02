@@ -10,6 +10,7 @@ class EditForm extends Component {
       usernameEntry: "",
       nameEntry: "",
       toCurriculum: false,
+      user: {}
     };
   }
 
@@ -35,7 +36,8 @@ class EditForm extends Component {
     if (user.message === undefined) {
       this.props.handleLogin(user);
       await this.setState({
-        toCurriculum: true
+        toCurriculum: true,
+        user: user
       });
     } else {
       console.log(user.message);
@@ -70,7 +72,7 @@ class EditForm extends Component {
     if (this.state.toLogin === true) {
       return <Redirect to="/login" />;
     } else if (this.state.toCurriculum === true) {
-      return <Redirect to="/curriculum" />;
+      return <Redirect to={`/curriculum`} />;
     } else {
       return (
         <div>

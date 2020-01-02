@@ -18,8 +18,6 @@ class CurriculumContainer extends Component {
     });
   };
 
-  editLink = `users/${this.props.current_user.id}/settings`;
-
   render() {
     if (this.state.toLessonSelection === true) {
       return <Redirect to="/lesson" />;
@@ -52,7 +50,7 @@ class CurriculumContainer extends Component {
               <div className="curriculum-card-image-container">
                 <Image src="https://media.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif" />
               </div>
-              <Link to={this.editLink}>
+              <Link to={`/users/${this.props.match.params.user_id}/settings`}>
                 <Button
                   size="massive"
                   basic
