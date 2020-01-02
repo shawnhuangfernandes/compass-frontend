@@ -13,10 +13,22 @@ class LessonContainer extends Component {
         </div>
         <div className="lesson-button-container">
           <Link to={`users/${this.props.current_user.id}/prompts`}>
-            <Button size="massive" basic inverted color='violet' content="Begin"/>
+            <Button
+              size="massive"
+              basic
+              inverted
+              color="violet"
+              content="Begin"
+            />
           </Link>
-          <Link to={`users/${this.props.match.params.user_id}/curriculum`}>
-          <Button size="massive" basic inverted color='violet' content="Back"/>
+          <Link to={`users/${this.props.current_user.id}/curriculum`}>
+            <Button
+              size="massive"
+              basic
+              inverted
+              color="violet"
+              content="Back"
+            />
           </Link>
         </div>
       </div>

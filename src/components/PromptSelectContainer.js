@@ -17,7 +17,7 @@ class PromptSelectContainer extends Component {
           <Image src="https://mod4-project.s3.us-east-2.amazonaws.com/book.png" />
         </div>
         <div className="prompt-selection-button-container">
-          <Link to={`users/${this.props.match.params.user_id}/lesson`}>
+          <Link to={`/lesson`}>
           <Button size="massive" basic inverted color='violet' content="Back"/>
           </Link>
         </div>

@@ -1,6 +1,3 @@
-// 'https://youtu.be/rLdQz2uZaoE'
-// https://www.youtube.com/watch?v=rLdQz2uZaoE
-
 import YouTube from 'react-youtube'
 import React, { Component } from 'react';
 
