@@ -23,6 +23,12 @@ class MainContainer extends Component {
     });
   };
 
+  onDelete = async user => {
+    await this.setState({
+      current_user: {}
+    });
+  };
+
   render() {
     return (
       <div className="main-container">
@@ -38,9 +44,11 @@ class MainContainer extends Component {
               render={() => <SignUpContainer handleLogin={this.onLogin} />}
             />
             <Route
-              path="/curriculum"
-              render={() => (
+              exact
+              path="/users/:user_id/curriculum"
+              render={(routerProps) => (
                 <CurriculumContainer
+                  {...routerProps}
                   current_user={this.state.current_user}
                   handleLogout={this.onLogout}
                 />
@@ -79,6 +87,7 @@ class MainContainer extends Component {
                   {...routerProps}
                   current_user={this.state.current_user}
                   handleLogin={this.onLogin}
+                  handleDelete={this.onDelete}
                 />
               )}
             />

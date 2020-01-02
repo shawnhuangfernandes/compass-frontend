@@ -1,27 +1,28 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Button, Form } from "semantic-ui-react";
+import { Link } from 'react-router-dom'
 
 class EditForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usernameEntry: "AL",
-      nameEntry: "CAPWN",
+      usernameEntry: "",
+      nameEntry: "",
       toCurriculum: false,
-      toLogin: false
     };
   }
 
-  handleBackClick = async () => {
+  handleBackClick = async e => {
+    e.preventDefault();
     await this.setState({
-      toLogin: true
+      toCurriculum: true
     });
   };
 
-  onSubmitForm = async e => {
-    const fetchUser = await fetch(`http://localhost:3000/users/${this.props.current_user.id}`, {
-      method: "PUT",
+  onSubmitForm = async (e) => {
+    const fetchUser = await fetch(`http://localhost:3000/users/${this.props.current_user_id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
@@ -39,7 +40,19 @@ class EditForm extends Component {
     } else {
       console.log(user.message);
     }
-  };
+
+    this.props.handleLogin(user);
+  }
+
+  handleDeleteClick = async (e) => {
+    await fetch(`http://localhost:3000/users/${this.props.current_user_id}`, {
+      method: 'DELETE'
+    });
+
+    this.props.handleDelete();
+  }
+
+  
 
   handleUsernameChange = e => {
     this.setState({
@@ -66,25 +79,35 @@ class EditForm extends Component {
               <label>Choose A Username</label>
               <input
                 onChange={this.handleUsernameChange}
-                placeholder={this.props.current_user.username}
+                placeholder={"Enter Your New Username Here"}
               />
             </Form.Field>
             <Form.Field>
               <label>Choose A Name</label>
               <input
                 onChange={this.handleNameChange}
-                placeholder={this.props.current_user.name}
+                placeholder={"Enter Your New Name Here"}
               />
             </Form.Field>
             <div className="signup-button-container">
               <Button
                 type="submit"
                 size="massive"
-                content="Register"
+                content="Update"
                 basic
                 inverted
                 color="violet"
               />
+              <Link to="/login">
+              <Button
+                onClick={this.handleDeleteClick}
+                size="massive"
+                content="Delete User"
+                basic
+                inverted
+                color="violet"
+              />
+              </Link>
               <Button
                 onClick={this.handleBackClick}
                 size="massive"

@@ -8,7 +8,8 @@ class SignInForm extends Component {
     this.state = {
       usernameEntry: "",
       toCurriculum: false,
-      toSignUp: false
+      toSignUp: false,
+      user: {}
     };
   }
 
@@ -26,7 +27,8 @@ class SignInForm extends Component {
     if (user.message === undefined) {
       this.props.handleLogin(user);
       await this.setState({
-        toCurriculum: true
+        toCurriculum: true,
+        user: user
       });
     } else {
       console.log(user.message);
@@ -49,7 +51,7 @@ class SignInForm extends Component {
     if (this.state.toSignUp === true) {
       return <Redirect to="/sign-up" />;
     } else if (this.state.toCurriculum === true) {
-      return <Redirect to="/curriculum" />;
+      return <Redirect to={`/users/${this.state.user.id}/curriculum`} />;
     } else {
       return (
         <div>

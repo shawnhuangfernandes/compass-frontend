@@ -170,7 +170,7 @@ body {
 .prompt-selection-container {
   height: 100vh;
   display: grid;
-  grid-template-columns: [v1] 25% [v2] 75% [v3];
+  grid-template-columns: [v1] 40% [v2] 60% [v3];
   grid-template-rows: [h1] 10% [h2] 60% [h3] 30% [h4]
 }
 
@@ -265,6 +265,8 @@ body {
   justify-content: center;
   align-self: center;
 }
+
+
 
 
 
