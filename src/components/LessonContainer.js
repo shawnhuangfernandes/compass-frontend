@@ -3,7 +3,10 @@ import PageTitle from "./PageTitle";
 import { Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
+// This component contains the lessons
 class LessonContainer extends Component {
+  
+  // render method
   render() {
     return (
       <div className="lesson-container">

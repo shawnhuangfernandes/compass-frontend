@@ -3,21 +3,25 @@ import PageTitle from "./PageTitle";
 import { Image, Button } from "semantic-ui-react";
 import { Redirect, Link } from "react-router-dom";
 
+// Component that holds the curriculum data
 class CurriculumContainer extends Component {
   constructor(props) {
     super(props);
+    // state object that tracks whether or not to redirect to lessons or Login
     this.state = {
       toLessonSelection: false,
       toLogin: false
     };
   }
 
+  // EVENT HANDLER: sets the "go to login" state to true
   goToLogin = async () => {
     await this.setState({
       toLogin: true
     });
   };
 
+  // render method that decides to either Redirect or display curriculum information
   render() {
     if (this.state.toLessonSelection === true) {
       return <Redirect to="/lesson" />;

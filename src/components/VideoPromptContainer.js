@@ -1,13 +1,16 @@
 import YouTube from 'react-youtube'
 import React, { Component } from 'react';
 
+// This is a video container that holds an embedded video
 class VideoPromptContainer extends Component {
-    videoOnReady(event) {
+  
+  // EVENT HANDLER: toggle video play on click
+  videoOnReady(event) {
         // access to player in all event handlers via event.target
         event.target.pauseVideo();
-        console.log(event.target);
       }
     
+      // render method
     render() {
         const opts = {
           height: '585',

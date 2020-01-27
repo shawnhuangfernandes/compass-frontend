@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Grid, Segment } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
+// This component structures all the prompts into a table
 class PromptsTable extends Component {
+  // render method
   render() {
     return (
       <Grid divided="vertically">

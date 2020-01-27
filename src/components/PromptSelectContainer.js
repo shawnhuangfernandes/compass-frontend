@@ -4,9 +4,11 @@ import PromptsTable from "./PromptsTable";
 import { Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
+// This Component contains all the prompts the user can choose to complete
 class PromptSelectContainer extends Component {
+  
+  // render method
   render() {
-    console.log(this.props)
     return (
       <div className="prompt-selection-container">
         <PageTitle titleText="Your Prompts" />

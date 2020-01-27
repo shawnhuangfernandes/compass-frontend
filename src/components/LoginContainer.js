@@ -3,7 +3,10 @@ import PageTitle from "./PageTitle";
 import SignInForm from "./SignInForm";
 import { Image } from "semantic-ui-react";
 
+// This component contains the Sign In Form
 class LoginContainer extends Component {
+  
+  // render method
   render() {
     return (
       <div className="login-container">

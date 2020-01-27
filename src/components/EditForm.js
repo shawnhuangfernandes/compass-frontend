@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Button, Form } from "semantic-ui-react";
 import { Link } from 'react-router-dom'
 
+// Component that serves as a controlled form for user information
 class EditForm extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,7 @@ class EditForm extends Component {
     };
   }
 
+  // EVENT HANDLER: handles button click to go to previous page (curriculum page)
   handleBackClick = async e => {
     e.preventDefault();
     await this.setState({
@@ -21,6 +23,7 @@ class EditForm extends Component {
     });
   };
 
+  // EVENT HANDLER: handles form submission fetch
   onSubmitForm = async (e) => {
     const fetchUser = await fetch(`http://localhost:3000/users/${this.props.current_user_id}`, {
       method: "PATCH",
@@ -46,6 +49,7 @@ class EditForm extends Component {
     this.props.handleLogin(user);
   }
 
+  // EVENT HANDLER: on click that handles user deletion
   handleDeleteClick = async (e) => {
     await fetch(`http://localhost:3000/users/${this.props.current_user_id}`, {
       method: 'DELETE'
@@ -54,20 +58,21 @@ class EditForm extends Component {
     this.props.handleDelete();
   }
 
-  
-
+  // EVENT HANDLER: handles username change
   handleUsernameChange = e => {
     this.setState({
       usernameEntry: e.target.value
     });
   };
 
+  // EVENT HANDLER: handles name change
   handleNameChange = e => {
     this.setState({
       nameEntry: e.target.value
     });
   };
 
+  // render either redirects to login or curriculum or renders the form
   render() {
     if (this.state.toLogin === true) {
       return <Redirect to="/login" />;

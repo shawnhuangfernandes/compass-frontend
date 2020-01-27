@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Button, Form } from "semantic-ui-react";
 
+// Component that serves as a controlled sign up form
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,7 @@ class SignUpForm extends Component {
     };
   }
 
+  // EVENT HANDLER: on form submission
   onSubmitForm = async e => {
     const fetchUser = await fetch("http://localhost:3000/users/", {
       method: "POST",
@@ -37,24 +39,28 @@ class SignUpForm extends Component {
     }
   };
 
+  // EVENT HANDLER: on button click to go back to login
   handleBackClick = async () => {
     await this.setState({
       toLogin: true
     });
   };
 
+  // EVENT HANDLER: on user name change
   handleUsernameChange = e => {
     this.setState({
       usernameEntry: e.target.value
     });
   };
 
+  // EVENT HANDLER: on name change
   handleNameChange = e => {
     this.setState({
       nameEntry: e.target.value
     });
   };
 
+  // render method
   render() {
     if (this.state.toLogin === true) {
       return <Redirect to="/login" />;

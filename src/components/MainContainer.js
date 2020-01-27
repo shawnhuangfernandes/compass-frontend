@@ -9,6 +9,7 @@ import PromptContainer from "../components/PromptContainer";
 import UserEditContainer from "../components/UserEditContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+// This is the main container that routes the user to the different parts of the app
 class MainContainer extends Component {
   constructor(props) {
     super(props);
@@ -17,18 +18,21 @@ class MainContainer extends Component {
     };
   }
 
+  // method that is passed as props to the sign in page
   onLogin = async user => {
     await this.setState({
       current_user: user
     });
   };
 
+  // method that is passed as props to the settings page
   onDelete = async user => {
     await this.setState({
       current_user: {}
     });
   };
 
+  // render method that renders all the routes
   render() {
     return (
       <div className="main-container">

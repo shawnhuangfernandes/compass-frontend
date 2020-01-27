@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Form } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
 
+// Controlled Form Compoenent for Signing into the application
 class SignInForm extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +14,7 @@ class SignInForm extends Component {
     };
   }
 
+  // EVENT HANDLER: on form submission to backend
   onSubmitForm = async e => {
     const fetchUser = await fetch("http://localhost:3000/find-user", {
       method: "POST",
@@ -35,18 +37,21 @@ class SignInForm extends Component {
     }
   };
 
+  // EVENT HANDLER: sets the redirect state to go to the sign up page
   handleSignUpClick = async () => {
     await this.setState({
       toSignUp: true
     });
   };
 
+  // EVENT HANDLER: on username change
   handleUsernameChange = e => {
     this.setState({
       usernameEntry: e.target.value
     });
   };
 
+  // renders either a redirect to sign up or curriculum, or shows the controlled form
   render() {
     if (this.state.toSignUp === true) {
       return <Redirect to="/sign-up" />;

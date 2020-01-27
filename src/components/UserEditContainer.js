@@ -3,6 +3,7 @@ import PageTitle from "./PageTitle";
 import { Image } from "semantic-ui-react";
 import EditForm from "./EditForm";
 
+// This is the user edit container for the settings page
 class UserEditContainer extends Component {
 
 constructor(props) {
@@ -12,11 +13,12 @@ constructor(props) {
   }
 }
 
-
+// when the component mounts, THEN get the user from the backend
   componentDidMount() {
     this.fetchTheUser();
   }
 
+  // gets the user from the backend using the id from the URL
   fetchTheUser = async () => {
     const fetchUser = await fetch(
       `http://localhost:3000/users/${this.props.match.params.user_id}`
@@ -27,6 +29,7 @@ constructor(props) {
     });
   }
 
+  // render method
   render() {
     return (
       <div className="signup-container">
