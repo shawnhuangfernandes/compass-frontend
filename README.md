@@ -9,6 +9,9 @@ Compass is a full-stack application I built as part of Flatiron's software engin
 For development, you will need 
 - Node.js
 
+To start up the backend see:
+https://github.com/shawnhuangfernandes/compass-backend
+
 ### Node
 
 [Node](http://nodejs.org/) is really easy to install & now include [NPM](https://npmjs.org/).
